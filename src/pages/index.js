@@ -9,7 +9,6 @@ const IndexPage = () => {
     <Layout pageTitle="Home Page">
       <h1>Welcome to my Gatsby site!</h1>
       <p>Im making this by following the Gatsby Tutorial.</p>
-
       <StaticImage
         alt="me on a lake"
         src="../images/me.jpg"

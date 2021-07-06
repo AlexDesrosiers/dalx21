@@ -1,14 +1,16 @@
 import * as React from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import {
   container,
-  heading,
   navLinks,
   navLinkItem,
   navLinkText,
   navBar,
   footer,
-  siteTitle
+  siteTitle,
+  header,
+  body
 } from './layout.module.css'
 
 const Layout = ({ pageTitle, children }) => {
@@ -26,33 +28,50 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <main className={container}>
       <title> {pageTitle} | {data.site.siteMetadata.title}</title>
-      <p className={siteTitle}>{data.site.siteMetadata.title}</p>
-        <nav className={navBar}>
-          <ul className={navLinks}>
-            <li className={navLinkItem}>
-              <Link to="/" className={navLinkText}>
-                Home
-              </Link>
-            </li>
-            <li className={navLinkItem}>
-              <Link to="/about" className={navLinkText}>
-                About
-              </Link>
-            </li>
-            <li className={navLinkItem}>
-              <Link to="/contact-me" className={navLinkText}>
-                Contact Me
-              </Link>
-            </li>
-            <li className={navLinkItem}>
-              <Link to="/blog" className={navLinkText}>
-                Blog
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        <h1 className={heading}>{pageTitle}</h1>
-      {children}
+
+
+      <div className={header}>
+
+        <div className={siteTitle}>
+          <StaticImage
+            alt="Alex Desrosiers"
+            src="../images/smoll-signature.png"
+          />
+        </div>
+
+        <div className={navBar}>
+          <nav>
+            <ul className={navLinks}>
+              <li className={navLinkItem}>
+                <Link to="/" className={navLinkText}>
+                  Home
+                </Link>
+              </li>
+              <li className={navLinkItem}>
+                <Link to="/about" className={navLinkText}>
+                  About
+                </Link>
+              </li>
+              <li className={navLinkItem}>
+                <Link to="/contact-me" className={navLinkText}>
+                  Contact Me
+                </Link>
+              </li>
+              <li className={navLinkItem}>
+                <Link to="/blog" className={navLinkText}>
+                  Blog
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+
+      <div className={body}>
+        {children}
+      </div>
+
       <div className={footer}>
         <p> Footer </p>
       </div>

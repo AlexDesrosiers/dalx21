@@ -1,12 +1,9 @@
 .container {
   margin: auto;
-  max-width: 500px;
   font-family: sans-serif;
 }
 
-.heading {
-  color: rebeccapurple;
-}
+
 .nav-links {
   display: flex;
   list-style: none;
@@ -20,7 +17,7 @@
 }
 
 .nav-bar {
-  border-bottom: 1px solid black;
+  float: right;
 }
 
 .footer {
@@ -28,7 +25,14 @@
 }
 
 .site-title {
-  font-size: 3rem;
-  color: gray;
-  font-weight: 700;
+  float:left;
+}
+
+.header {
+  height: 5vw;
+  border-bottom: 1px solid black;
+}
+
+.body {
+  background-color: gray;
 }
